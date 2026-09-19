@@ -1,0 +1,56 @@
+{
+  "name": "morphash",
+  "version": "0.1.0",
+  "description": "Deterministic SVG cover generator from strings.",
+  "license": "MIT",
+  "author": "fikrisr",
+  "type": "module",
+  "keywords": [
+    "svg",
+    "cover",
+    "generator",
+    "hash",
+    "deterministic",
+    "placeholder",
+    "og-image"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fikrisr/morphash.git"
+  },
+  "homepage": "https://github.com/fikrisr/morphash#readme",
+  "bugs": {
+    "url": "https://github.com/fikrisr/morphash/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/morphash.global.js",
+  "jsdelivr": "./dist/morphash.global.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "vite --host 127.0.0.1",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "preview": "vite --host 127.0.0.1 --open /examples/preview.html",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.8",
+    "vitest": "^2.1.1"
+  }
+}
